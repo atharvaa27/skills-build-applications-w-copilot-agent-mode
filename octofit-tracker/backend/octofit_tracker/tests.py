@@ -19,11 +19,11 @@ class ActivityModelTest(TestCase):
 
 class LeaderboardModelTest(TestCase):
     def test_create_leaderboard_entry(self):
-        user = User.objects.create(username='testuser', email='testuser@example.com', password='password123')
-        leaderboard = Leaderboard.objects.create(user=user, score=100)
-        self.assertEqual(leaderboard.score, 100)
+        team = Team.objects.create(name='Test Team')
+        leaderboard_entry = Leaderboard.objects.create(team=team, total_points=100)
+        self.assertEqual(leaderboard_entry.total_points, 100)
 
 class WorkoutModelTest(TestCase):
     def test_create_workout(self):
-        workout = Workout.objects.create(name='Test Workout', description='A test workout description')
-        self.assertEqual(workout.name, 'Test Workout')
+        workout = Workout.objects.create(name='Morning Run', description='A quick morning run', duration='00:30:00', calories_burned=300)
+        self.assertEqual(workout.name, 'Morning Run')

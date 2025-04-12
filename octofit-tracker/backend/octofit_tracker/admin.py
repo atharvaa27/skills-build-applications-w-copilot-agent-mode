@@ -15,8 +15,8 @@ class ActivityAdmin(admin.ModelAdmin):
 
 @admin.register(Leaderboard)
 class LeaderboardAdmin(admin.ModelAdmin):
-    list_display = ('user', 'score')
+    list_display = ('team', 'total_points')
 
 @admin.register(Workout)
 class WorkoutAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
+    list_display = ('name', 'duration', 'calories_burned')
